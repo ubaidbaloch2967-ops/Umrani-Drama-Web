@@ -1,96 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UMRANI 🎭 DRAMAS - Trending Dramas</title>
-<style>
-body{
-  margin:0;
-  height:100vh;
-  background:#080909;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  font-family:Arial, sans-serif;
-  overflow:hidden;
-  background: radial-gradient(circle at center, #1a0a2e 0%, #080909 70%);
-  position:relative;
-}
-body::before{
-  content:"";
-  position:absolute;
-  width:150%;
-  height:4px;
-  background: linear-gradient(90deg, transparent, #a020f0, #ffae00, #00e5ff, transparent);
-  transform:rotate(-20deg);
-  top:50%;
-  left:-25%;
-  box-shadow: 0 0 20px #a020f0, 0 0 40px #ffae00;
-  animation: lightMove 3s infinite linear;
-}
-@keyframes lightMove{
-  0%{ transform:rotate(-20deg) translateX(-100px); }
-  100%{ transform:rotate(-20deg) translateX(100px); }
-}
-h1{
-  margin:0;
-  font-size:50px;
-  font-weight:900;
-  color:#a020f0;
-  text-shadow: 0 0 10px #a020f0, 0 0 30px #a020f0;
-  letter-spacing:2px;
-  z-index:2;
-  text-align:center;
-}
-h2{
-  margin:0;
-  font-size:38px;
-  font-weight:800;
-  color:#ffcc00;
-  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffae00;
-  letter-spacing:4px;
-  z-index:2;
-  margin-top:5px;
-}
-p{
-  color:white;
-  font-size:16px;
-  margin-top:20px;
-  z-index:2;
-  letter-spacing:1px;
-}
-.btn{
-  z-index:2;
-  margin-top:20px;
-  padding:12px 30px;
-  border-radius:30px;
-  font-size:18px;
-  font-weight:bold;
-  text-decoration:none;
-  display:inline-block;
-  background:transparent;
-}
-.btn-blue{
-  color:#00e5ff;
-  border:2px solid #00e5ff;
-  box-shadow: 0 0 10px #00e5ff;
-}
-.btn-yellow{
-  color:#ffae00;
-  border:2px solid #ffae00;
-  box-shadow: 0 0 10px #ffae00;
-}
-</style>
-</head>
-<body>
-<h1>UMRANI 🎭</h1>
-<h2>DRAMAS</h2>
-<p>Opening the trending dramas library... 🍿🎭</p>
-
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMRANI DRAMAS - Official</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}body{height:100vh;background:#080909;display:flex;justify-content:center;align-items:center;flex-direction:column;font-family:Arial;overflow:hidden;background:radial-gradient(circle at center,#2a0a4a 0%,#080909 70%);position:relative;color:white}
+body::before{content:"";position:absolute;width:150%;height:3px;background:linear-gradient(90deg,transparent,#a020f0,#ffae00,#00e5ff,transparent);transform:rotate(-18deg);top:48%;left:-25%;box-shadow:0 0 20px #a020f0;animation:move 3s infinite linear}
+@keyframes move{0%{transform:rotate(-18deg) translateX(-80px)}100%{transform:rotate(-18deg) translateX(80px)}}
+h1{font-size:58px;font-weight:900;color:#c07cff;text-shadow:0 0 15px #a020f0,0 0 30px #a020f0;z-index:2}h2{font-size:44px;font-weight:800;color:#ffcc33;text-shadow:0 0 12px #ffcc00;z-index:2;letter-spacing:6px}
+p{margin-top:18px;z-index:2}.btns{margin-top:28px;z-index:2;display:flex;gap:15px}
+.btn{padding:12px 28px;border-radius:30px;font-weight:bold;text-decoration:none;border:2px solid}
+.btn-blue{color:#00e5ff;border-color:#00e5ff}.btn-yellow{color:#ffae00;border-color:#ffae00}
+</style></head><body>
+<h1>UMRANI 🎭</h1><h2>DRAMAS</h2><p>Open Website and Enjoy Trending Dramas</p>
+<div class="btns">
 <a href="Movies.html" class="btn btn-blue">Trending Dramas</a>
 <a href="Ubaid.html" class="btn btn-yellow">Featured Drama</a>
-
-</body>
-</html>
+</div></body></html>
