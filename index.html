@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ubaid Moviz4U</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif}
+#canvas{position:fixed;inset:0;width:100%;height:100%;z-index:1}
+.box{position:relative;z-index:2;min-height:100vh;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px}
+h1{margin:0;font-family:Arial Black,Arial,sans-serif;font-weight:900;line-height:.95}
+.ubaid{font-size:clamp(52px,13vw,85px);color:#ff3300;text-shadow:0 0 20px red,0 0 40px orange,0 0 70px red}
+.moviz{font-size:clamp(32px,8vw,48px);margin-top:8px;color:#ffcc00;text-shadow:0 0 15px orange,0 0 30px red;letter-spacing:3px}
+.tag{margin-top:18px;letter-spacing:1px;font-size:15px}
+.btns{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+a.btn,button.btn{padding:12px 23px;border:2px solid #00eaff;color:#00eaff;border-radius:30px;text-decoration:none;font-weight:bold;background:rgba(0,0,0,.72);font-size:14px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+a.btn:hover,button.btn:hover{transform:translateY(-3px);box-shadow:0 0 18px currentColor}
+a.btn2{border-color:#ffaa00;color:#ffaa00}
+button.btn-owner{border-color:#ff55e8;color:#ff8cf0}
+.owner-panel{display:none;width:min(360px,100%);margin-top:26px;padding:20px;background:rgba(10,10,18,.92);border:1px solid #ff55e8;border-radius:20px;box-shadow:0 0 25px #ff00d433;animation:panelIn .35s ease both}
+.owner-panel.show{display:block}
+.owner-photo{display:block;width:190px;height:190px;max-width:70vw;max-height:70vw;object-fit:cover;border-radius:50%;margin:0 auto 15px;border:3px solid #00eaff;box-shadow:0 0 22px #00eaff88;animation:floatPhoto 3s ease-in-out infinite}
+.owner-name{font-size:23px;color:#ffcc00;margin:8px 0}
+.owner-caption{font-size:13px;color:#ddd;line-height:1.5;margin:0}
+@keyframes floatPhoto{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="canvas" aria-hidden="true"></canvas>
+<main class="box">
+  <h1 class="ubaid">UBAID</h1>
+  <h1 class="moviz">MOVIZ4U</h1>
+  <div class="tag">Open Website and Enjoy Movies 🍿🎥</div>
+  <div class="btns">
+    <button class="btn btn-owner" id="owner-button" type="button" aria-expanded="false" aria-controls="owner-panel">Website Owner</button>
+    <a class="btn btn2" href="Movies.html">Show Movies</a>
+  </div>
+  <section class="owner-panel" id="owner-panel" aria-label="Website owner profile">
+    <!-- Change ubaid.jpg below to the exact image filename you uploaded to GitHub. -->
+    <img class="owner-photo" src="ubaid.jpg" alt="Website owner photo" onerror="this.onerror=null;this.src='https://placehold.co/400x400/171820/00eaff?text=Check+Photo+Filename'">
+    <h2 class="owner-name">Ubaid</h2>
+    <p class="owner-caption">Owner of Ubaid Moviz4U 🎬</p>
+  </section>
+</main>
+<script>
+const ownerButton=document.getElementById('owner-button');
+const ownerPanel=document.getElementById('owner-panel');
+ownerButton.addEventListener('click',()=>{
+  const isOpen=ownerPanel.classList.toggle('show');
+  ownerButton.setAttribute('aria-expanded',String(isOpen));
+  if(isOpen) ownerPanel.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+</script>
+<script type="module">
+import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js";
+try {
+  const app=TubesCursor(document.getElementById("canvas"),{
+    tubes:{colors:["#00eaff","#ff00ff","#00ff88"],lights:{intensity:200,colors:["#00eaff","#ff00aa","#ffae00","#00ae5d"]}}
+  });
+  function randomColors(){
+    if(app&&app.tubes){
+      const color=()=>"#"+Math.floor(Math.random()*16777215).toString(16).padStart(6,"0");
+      app.tubes.setColors([color(),color()]);
+    }
+  }
+  document.body.addEventListener("click",randomColors);
+} catch(error) { console.warn("Animated background could not load.",error); }
+</script>
+</body>
+</html>
