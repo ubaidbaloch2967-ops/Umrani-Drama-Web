@@ -1,13 +1,96 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0;url=Movies.html">
-<title>UMRANI 🎭DRAMAS - Trending DRAMAS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UMRANI 🎭 DRAMAS - Trending Dramas</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:#080909;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-family:Arial, sans-serif;
+  overflow:hidden;
+  background: radial-gradient(circle at center, #1a0a2e 0%, #080909 70%);
+  position:relative;
+}
+body::before{
+  content:"";
+  position:absolute;
+  width:150%;
+  height:4px;
+  background: linear-gradient(90deg, transparent, #a020f0, #ffae00, #00e5ff, transparent);
+  transform:rotate(-20deg);
+  top:50%;
+  left:-25%;
+  box-shadow: 0 0 20px #a020f0, 0 0 40px #ffae00;
+  animation: lightMove 3s infinite linear;
+}
+@keyframes lightMove{
+  0%{ transform:rotate(-20deg) translateX(-100px); }
+  100%{ transform:rotate(-20deg) translateX(100px); }
+}
+h1{
+  margin:0;
+  font-size:50px;
+  font-weight:900;
+  color:#a020f0;
+  text-shadow: 0 0 10px #a020f0, 0 0 30px #a020f0;
+  letter-spacing:2px;
+  z-index:2;
+  text-align:center;
+}
+h2{
+  margin:0;
+  font-size:38px;
+  font-weight:800;
+  color:#ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffae00;
+  letter-spacing:4px;
+  z-index:2;
+  margin-top:5px;
+}
+p{
+  color:white;
+  font-size:16px;
+  margin-top:20px;
+  z-index:2;
+  letter-spacing:1px;
+}
+.btn{
+  z-index:2;
+  margin-top:20px;
+  padding:12px 30px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
+  text-decoration:none;
+  display:inline-block;
+  background:transparent;
+}
+.btn-blue{
+  color:#00e5ff;
+  border:2px solid #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
+}
+.btn-yellow{
+  color:#ffae00;
+  border:2px solid #ffae00;
+  box-shadow: 0 0 10px #ffae00;
+}
+</style>
 </head>
-<body style="background:#08090d;color:white;font-family:Arial,sans-serif;padding:24px">
-<p>Opening the trending dramas library… <a href="Movies.html" style="color:#00eaff">Tap here if you are not redirected.</a></p>
+<body>
+<h1>UMRANI 🎭</h1>
+<h2>DRAMAS</h2>
+<p>Opening the trending dramas library... 🍿🎭</p>
+
+<a href="Movies.html" class="btn btn-blue">Trending Dramas</a>
+<a href="Ubaid.html" class="btn btn-yellow">Featured Drama</a>
+
 </body>
 </html>
